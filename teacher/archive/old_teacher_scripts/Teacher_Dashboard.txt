@@ -1,0 +1,34 @@
+setActivityTimeout	20000
+setEventName	Teacher:Home Page
+navigate	https://qa.cambridgeone.org/home
+sleep 3
+logData	1
+setEventName	Teacher:Login page
+execAndWait	document.getElementById('onboarding-header-login-btn').click();
+logData	2
+setEventName	Enter User Name
+setValue	placeholder=Enter your email address *	cupqateacher1@yopmail.com 
+execAndWait	document.getElementsByTagName('input')[0].dispatchEvent(new Event("input"));
+setEventName	Enter Password
+setValue	placeholder=Enter your password *	compro987
+execAndWait	document.getElementsByTagName('input')[1].dispatchEvent(new Event("input"));
+logData	3
+setEventName	Teacher DB Page
+clickAndWait	value=Log in
+logData	4
+setEventName	Practice Extra
+clickAndWait	qid=tDashboard-0100
+clickAndWait	qid=cHeader-9
+logData	5
+setEventName	First Activity
+clickAndWait	title=Lesson 1.5: Things you have in common
+clickAndWait	title=Watch and listen 1
+clickAndWait	qid=cHeader-9
+logData	6
+setEventName	Second Activity
+clickAndWait	title=Lesson 1.3: How do you know Raquel?
+clickAndWait	title=Functional language: Role play
+logData	7
+setEventName	Logout
+clickAndWait	qid=cHeader-3
+clickAndWait	qid=cHeader-7

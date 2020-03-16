@@ -1,0 +1,34 @@
+setActivityTimeout	20000
+setEventName	Teacher:Home Page
+navigate	https://qa.cambridgeone.org/home
+sleep 3
+
+setEventName	Teacher:Login page
+execAndWait	document.getElementById('onboarding-header-login-btn').click();
+
+setEventName	Enter User Name
+setValue	placeholder=Enter your email address *	clientteacher@yopmail.com 
+execAndWait	document.getElementsByTagName('input')[0].dispatchEvent(new Event("input"));
+
+setEventName	Enter Password
+setValue	placeholder=Enter your password *	Compro11
+execAndWait	document.getElementsByTagName('input')[1].dispatchEvent(new Event("input"));
+
+setEventName	Click Log In
+clickAndWait	value=Log in
+
+setEventName	Open Practice Extra For a Class
+clickAndWait	qid=tDashboard-00undefined
+clickAndWait	qid=cView-62-0
+
+setEventName	First Activity
+clickAndWait	qid=cHeader-9
+clickAndWait	title=Vocabulary: Countries and nationalities 3
+
+setEventName	Second Activity
+clickAndWait	title=Vocabulary: Countries and nationalities 1
+clickAndWait	qid=cHeader-8
+
+setEventName	Logout
+clickAndWait	qid=cHeader-3
+clickAndWait	qid=cHeader-7

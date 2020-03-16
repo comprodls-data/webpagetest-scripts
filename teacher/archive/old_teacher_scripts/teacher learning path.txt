@@ -1,0 +1,27 @@
+setActivityTimeout	20000
+setEventName	Teacher:Home Page
+navigate	https://qa.cambridgeone.org/home
+logData	1
+setEventName	Teacher:Login page
+execAndWait	document.getElementById('onboarding-header-login-btn').click();
+logData	2
+setEventName	Enter User Name
+setValue	placeholder=Enter your email address *	cupqateacher1@yopmail.com 
+execAndWait	document.getElementsByTagName('input')[0].dispatchEvent(new Event("input"));
+setEventName	Enter Password
+setValue	placeholder=Enter your password *	compro987
+execAndWait	document.getElementsByTagName('input')[1].dispatchEvent(new Event("input"));
+logData	3
+setEventName	Teacher DB Page
+clickAndWait	value=Log in
+setEventName	Products Page
+execAndWait	document.querySelector('.my-classes a[qid="tDashboard-17-0043"]').click()
+logData	4
+
+setEventName	class Page
+execAndWait	document.querySelector('.product-info a[qid="cView-62-0"]').click()
+logData	5
+
+setEventName	Practice extra [learning path]
+clickAndWait	qid=cHeader-8
+logData	6

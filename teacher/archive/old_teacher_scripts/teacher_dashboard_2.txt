@@ -1,0 +1,17 @@
+setActivityTimeout	20000
+setEventName	Teacher:Home Page
+navigate	https://qa.cambridgeone.org/home
+logData	1
+sleep 3
+setEventName	Teacher:Login page
+execAndWait	document.getElementById('onboarding-header-login-btn').click();
+logData	2
+setEventName	Enter User Name
+setValue	placeholder=Enter your email address *	collabteacher@yopmail.com 
+execAndWait	document.getElementsByTagName('input')[0].dispatchEvent(new Event("input"));
+setEventName	Enter Password
+setValue	placeholder=Enter your password *	Compro11
+execAndWait	document.getElementsByTagName('input')[1].dispatchEvent(new Event("input"));
+logData	3
+setEventName	Teacher DB Page
+clickAndWait	value=Log in

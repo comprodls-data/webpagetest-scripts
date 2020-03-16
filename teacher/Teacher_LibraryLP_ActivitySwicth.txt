@@ -1,0 +1,38 @@
+setActivityTimeout	20000
+setEventName	Teacher:Home Page
+navigate	https://qa.cambridgeone.org/home
+logData	1
+setEventName	Teacher:Login page
+execAndWait	document.getElementById('onboarding-header-login-btn').click();
+
+
+setEventName	Enter User Name
+setValue	placeholder=Enter your email address *	clientteacher@yopmail.com 
+execAndWait	document.getElementsByTagName('input')[0].dispatchEvent(new Event("input"));
+
+setEventName	Enter Password
+setValue	placeholder=Enter your password *	Compro11
+execAndWait	document.getElementsByTagName('input')[1].dispatchEvent(new Event("input"));
+
+setEventName	Teacher DB Page
+clickAndWait	value=Log in
+
+setEventName	Click My Library Tab
+execAndWait	document.querySelector('[qid="tDashboard-24"]').click()
+
+setEventName	Click On Product Evolve Level 1
+execAndWait	document.querySelector('.product [src="https://qa-content.cambridgeone.org/stage/final/bundles/evpel1_bundle/assets/evpel1/evolve_l1.png"]').click()
+
+setEventName	Practice Extra
+execAndWait	document.querySelector('.digital-components .img-overlay').click()
+clickAndWait	qid=cHeader-9
+
+setEventName	First Activity
+clickAndWait	title=Vocabulary: Countries and nationalities 3
+
+setEventName	Second Activity
+clickAndWait	title=Vocabulary: Countries and nationalities 1
+
+setEventName	Logout
+clickAndWait	qid=cHeader-3
+clickAndWait	qid=cHeader-7
