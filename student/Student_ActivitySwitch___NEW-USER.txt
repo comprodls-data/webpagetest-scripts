@@ -1,0 +1,83 @@
+setActivityTimeout	20000
+setEventName	Student:Home Page
+navigate	https://qa.cambridgeone.org/home
+
+logData	1
+setEventName	Student:Login page
+sleep 2
+execAndWait	document.getElementById('onboarding-header-login-btn').click();
+
+logData	2
+setEventName	Enter User Name
+setValue	placeholder=Enter your email address *	clientstud1@yopmail.com 
+execAndWait	document.getElementsByTagName('input')[0].dispatchEvent(new Event("input"));
+setEventName	Enter Password
+setValue	placeholder=Enter your password *	Compro11
+execAndWait	document.getElementsByTagName('input')[1].dispatchEvent(new Event("input"));
+
+logData	3
+setEventName	Student DB Page
+clickAndWait	value=Log in
+
+logData	4
+setEventName	Assignment
+execAndWait	document.querySelector('[qid="ldashboard-0-0-4"]').click()
+sleep 1
+
+logData	5
+setEventName	Learning Path
+execAndWait	document.querySelector('[qid="aView-1-0"]').click()
+sleep 1
+
+logData	6
+setEventName	Switch To a Activity
+execAndWait	document.querySelector('[qid="cHeader-9"]').click()
+execAndWait	document.querySelector('[title="Grammar: I am, you are 2"]').click()
+sleep 1
+
+logData	7
+setEventName	Switch To Another Activity
+execAndWait	document.querySelector('[title="Vocabulary: Countries and nationalities 1"]').click()
+sleep 1
+
+logData	8
+setEventName	Click back button to Go Back to Dashboard
+execAndWait	document.querySelector('[qid="cHeader-8"]').click()
+sleep 2
+
+logData	9
+setEventName	Practice Extra
+execAndWait	document.querySelector('[qid="ldashboard-0-0-5"]').click()
+sleep 1
+
+logData	10
+setEventName	Switch To a Activity
+execAndWait	document.querySelector('[qid="cHeader-9"]').click()
+execAndWait	document.querySelector('[title="Vocabulary: Countries and nationalities 3"]').click()
+sleep 1
+
+logData	11
+setEventName	Switch To Another Activity
+execAndWait	document.querySelector('[title="Vocabulary: Countries and nationalities 1"]').click()
+sleep 1
+
+logData	12
+setEventName	Click back button to Go Back to Dashboard
+execAndWait	document.querySelector('[qid="cHeader-8"]').click()
+sleep 3
+
+logData	13
+setEventName	Click My Progress
+execAndWait	document.querySelector('.courses:nth-child(1) .product-container .product-image').click()
+sleep 2
+
+logData	14
+setEventName	Click Logo to go back to Dashboard
+execAndWait	document.querySelector('.brand-img').click()
+sleep 3
+
+
+logData	15
+setEventName	LogOut
+execAndWait	document.querySelector('[qid="cHeader-3"]').click()
+execAndWait	document.querySelector('[qid="cHeader-7"]').click()

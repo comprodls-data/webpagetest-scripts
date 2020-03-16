@@ -1,0 +1,40 @@
+setActivityTimeout	20000
+setEventName	Student:Home Page
+navigate	https://qa.cambridgeone.org/home
+
+setEventName	Student:Login page
+sleep 2
+execAndWait	document.getElementById('onboarding-header-login-btn').click();
+
+setEventName	Enter User Name
+setValue	placeholder=Enter your email address *	clientstud1@yopmail.com 
+execAndWait	document.getElementsByTagName('input')[0].dispatchEvent(new Event("input"));
+setEventName	Enter Password
+setValue	placeholder=Enter your password *	Compro11
+execAndWait	document.getElementsByTagName('input')[1].dispatchEvent(new Event("input"));
+
+setEventName	Student DB Page
+clickAndWait	value=Log in
+
+setEventName	Practice Extra
+execAndWait	document.querySelector('[qid="ldashboard-0-0-5"]').click()
+
+setEventName	Open Activity TOC - Games
+execAndWait	document.querySelector('[qid="cHeader-9"]').click()
+execAndWait	document.querySelector('[title="Games"]').click()
+
+setEventName	Switch To Another Activity
+execAndWait	document.querySelector('[title="Vocabulary game"]').click()
+
+setEventName	Open Activity TOC - Lesson 1
+execAndWait	document.querySelector('[title="Lesson 1.1: I'm Brazilian. And you?"]').click()
+
+setEventName	Switch back to default activity
+execAndWait	document.querySelector('[title="Vocabulary: Countries and nationalities 1"]').click()
+
+setEventName	Click back button to Go Back to Dashboard
+execAndWait	document.querySelector('[qid="cHeader-8"]').click()
+
+setEventName	LogOut
+execAndWait	document.querySelector('[qid="cHeader-3"]').click()
+execAndWait	document.querySelector('[qid="cHeader-7"]').click()
